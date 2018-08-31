@@ -3,11 +3,10 @@ var camera;
 var renderer;
 var largura=window.innerWidth;
 var altura=window.innerHeight;
-var cont=0;
 var f_atrito=0.05;
 
 var esferas= {
-    x:[-500,300,405,405,525,525,525,660,660,660,660],
+    x:[-525,300,405,405,525,525,525,660,660,660,660],
     y:[0 ,0  ,52 ,-52,100 ,-100 ,0 ,160,-55,-160,55],
     raio: 50,
     segmentos: 20,
@@ -28,7 +27,7 @@ var esferas= {
                 dirV:this.dirV[i]
             });
             if(i==0){
-                this._esferas[i].velocidade=100;
+                this._esferas[i].velocidade=150;
             }
             this._esferas[i].materialEsfera =  new THREE.MeshBasicMaterial({map: this._esferas[i].texturaEsfera});
             this._esferas[i].desenhoEsfera = new THREE.Mesh(this._esferas[i].geometriaEsfera, this._esferas[i].materialEsfera);
@@ -143,7 +142,6 @@ var esferas= {
 };
 
 function atrito(){
-    cont+=0.02;
         for(i=0;i<esferas._esferas.length;i++){
             if(esferas._esferas[i].velocidade>0){
                 esferas._esferas[i].velocidade-=f_atrito;
@@ -177,7 +175,7 @@ function renderizar() {
     renderer.render(cena, camera);
     requestAnimationFrame(renderizar);
     esferas.verificaColisao();
-    //atrito();
+    atrito();
 }
 window.onload=inicio();
 
