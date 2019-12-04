@@ -12,7 +12,8 @@ var esferas= {
     segmentos: 20,
     aneis: 15,
     _esferas:[],
-    textura:["esfera1.png","esfera2.png","esfera3.jpg","esfera4.jpg","esfera5.png","esfera6.jpg","esfera7.jpg","esfera8.png","esfera9.jpg","esfera10.png","esfera10.png"],
+    textura:["img/esfera1.png","img/esfera2.png","img/esfera3.jpg","img/esfera4.jpg","img/esfera5.png",
+        "img/esfera6.jpg","img/esfera7.jpg","img/esfera8.png","img/esfera9.jpg","img/esfera10.png","img/esfera10.png"],
     dirH: [0,3,3,3,3,3,3,3,3,3],         //0 = direita           1 = esquerda
     dirV: [3,3,3,3,3,3,3,3,3,3],         //0 = cima              1 = baixo
     desenha: function () {
